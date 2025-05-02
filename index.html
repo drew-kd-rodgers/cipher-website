@@ -18,13 +18,25 @@
             </div>
         </div>
         <div class="flex gap-10">
-            <div>
+            <div id="caesarkey">
                 <label for="key" class="text-zinc-500">KEY</label><br>
                 <input type="number" min="0" max="26" value="3" id="key" name="key" oninput="update_latest()" class="p-2 rounded-sm ring-2 ring-zinc-300 bg-white text-zinc-800"/>
             </div>
+            <div id="vigenerekey" hidden>
+                <label for="key" class="text-zinc-500">KEY</label><br>
+                <input type="text" value="KEY" id="textkey" name="textkey" oninput="update_latest()" class="p-2 rounded-sm ring-2 ring-zinc-300 bg-white text-zinc-800"/>
+            </div>
             <div>
-                <label for="reverse" class="text-zinc-500">REVERSE</label><br>
+                <label for="reverse" class="text-zinc-500">REVERSE (LEFT)</label><br>
                 <input type="checkbox" checked id="reverse" name="reverse" oninput="update_latest()" class="p-2 rounded-sm ring-2 ring-zinc-300 bg-white text-zinc-800"/>
+            </div>
+            <div>
+                <label for="caesar" class="text-zinc-500">CAESAR</label>
+                <input type="radio" name="cipher" id="caesar" checked onchange="set_caesar()" />
+            </div>
+            <div>
+                <label for="vigenere" class="text-zinc-500">VIGENERE</label>
+                <input type="radio" name="cipher" id="vigenere" onchange="set_vigenere()" /> 
             </div>
         </div>
     </main>
