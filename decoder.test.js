@@ -1,4 +1,4 @@
-const {shift_text, caesar_cipher} = require("./decoder")
+const {shift_text, caesar_cipher, vigenere_cipher} = require("./decoder")
 
 test("test alphabet shift", () => {
     expect(shift_text("a", 3)).toBe("d");
@@ -13,4 +13,8 @@ test("test caesar cipher", () => {
     expect(caesar_cipher("DDD", 2, false)).toBe("BBB");
     expect(caesar_cipher("DDD", 2, true)).toBe("FFF");
     expect(caesar_cipher("Secret message", 3, false)).toBe("Pbzobq jbppxdb");
+})
+
+test("test vigenere cipher", () => {
+    expect(vigenere_cipher("Secret message", "messagesecret", false)).toBe("Gakzen imoqjcl");
 })
