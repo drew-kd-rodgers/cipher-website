@@ -16,5 +16,6 @@ test("test caesar cipher", () => {
 })
 
 test("test vigenere cipher", () => {
-    expect(vigenere_cipher("Secret message", "messagesecret", false)).toBe("Gakzen imoqjcl");
+    expect(vigenere_cipher("Secret message", "messagesecret", false)).toBe("Eiujez qwwurkx");
+    expect(vigenere_cipher("Secret message", "messagesecret", true)).toBe("Gakzen imoqjcl");
 })
