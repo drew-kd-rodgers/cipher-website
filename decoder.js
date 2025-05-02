@@ -21,4 +21,17 @@ function caesar_cipher(plainText, key, decode) {
     return shift_text(plainText, key * (decode ? 1 : -1));
 }
 
+function update_plaintext() {
+    document.getElementById("ciphertext").value = caesar_cipher(document.getElementById("plaintext").value, document.getElementById("key").value, !(document.getElementById("reverse").checked));
+    update_latest = update_plaintext;
+}
+
+function update_ciphertext() {
+    document.getElementById("plaintext").value = caesar_cipher(document.getElementById("ciphertext").value, document.getElementById("key").value, (document.getElementById("reverse").checked));
+    update_latest = update_ciphertext;
+}
+
+function update_latest() {}
+update_latest = update_plaintext;
+
 module.exports = {shift_text, caesar_cipher};

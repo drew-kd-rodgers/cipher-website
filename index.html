@@ -6,18 +6,27 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="flex flex-col bg-zinc-200 pt-16">
-    <main class="mx-auto container grid md:grid-cols-2 md:max-w-3/5 md:max-h-3/4 gap-10">
-        <div>
-            <label for="plaintext" class="text-zinc-500">PLAINTEXT</label><br>
-            <textarea id="plaintext" name="plaintext" class="p-2 rounded-sm ring-2 ring-zinc-300 bg-white h-full w-full text-zinc-800"></textarea>
+    <main class="mx-auto container grid grid-rows-2 md:max-w-3/5 md:max-h-3/4 gap-10">
+        <div class="grid md:grid-cols-2 gap-10">
+            <div>
+                <label for="plaintext" class="text-zinc-500">PLAINTEXT</label><br>
+                <textarea id="plaintext" name="plaintext" oninput="update_plaintext()" class="p-2 rounded-sm ring-2 ring-zinc-300 bg-white h-full w-full text-zinc-800"></textarea>
+            </div>
+            <div>
+                <label for="ciphertext" class="text-zinc-500">CIPHERTEXT</label><br>
+                <textarea id="ciphertext" name="ciphertext" oninput="update_ciphertext()" class="p-2 rounded-sm ring-2 ring-zinc-300 bg-white h-full w-full text-zinc-800"></textarea>
+            </div>
         </div>
-        <div>
-            <label for="ciphertext" class="text-zinc-500">CIPHERTEXT</label><br>
-            <textarea id="ciphertext" name="ciphertext" class="p-2 rounded-sm ring-2 ring-zinc-300 bg-white h-full w-full text-zinc-800"></textarea>
-        </div>
-        <div>
-            <label for="key" class="text-zinc-500">KEY</label><br>
-            <input type="number" min="0" max="26" value="3" id="key" name="key" class="p-2 rounded-sm ring-2 ring-zinc-300 bg-white text-zinc-800"></textarea>
+        <div class="flex gap-10">
+            <div>
+                <label for="key" class="text-zinc-500">KEY</label><br>
+                <input type="number" min="0" max="26" value="3" id="key" name="key" oninput="update_latest()" class="p-2 rounded-sm ring-2 ring-zinc-300 bg-white text-zinc-800"></textarea>
+            </div>
+            <div>
+                <label for="reverse" class="text-zinc-500">REVERSE</label><br>
+                <input type="checkbox" id="reverse" name="reverse" oninput="update_latest()" class="p-2 rounded-sm ring-2 ring-zinc-300 bg-white text-zinc-800"></textarea>
+            </div>
         </div>
     </main>
+    <script src="decoder.js"></script>
 </body>
